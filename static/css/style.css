@@ -1,0 +1,19 @@
+html body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 340px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.selectedCard {
+    background-color: #084298;
+    color: #fff;
+  }
