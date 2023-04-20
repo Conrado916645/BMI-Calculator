@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">BMI Calculator</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-3 text-center">
+            <!-- GENDER -->
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <div class="shadow card border-none mb-3" style="width: 10rem;" id="maleCard">
+                        <div class="card-body ">
+                            <img src="static/icon/male.png" alt="Male" width="100rem">
+                            <h5 class="card-title">Male</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6  d-flex justify-content-center">
+                    <div class="shadow card border-none mb-3" style="width: 10rem;" id="femaleCard">
+                        <div class="card-body ">
+                            <img src="static/icon/female.png" alt="Female" width="100rem">
+                            <h5 class="card-title" id=>Female</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HEIGHT -->
+            <div class="row">
+                <div class="col-sm d-flex justify-content-center">
+                    <div class="shadow card border-none mb-3"  style="max-width: 19rem;">
+                        <div class="card-body ">
+                            <h5 class="card-title">Height <span class="fs-6">(cms)</span></h5>
+                            <div class="col">
+                                <input type="number" max="220"
+                                    class="d-inline form-control text-center border-0 fs-1 fw-bold no-spin"
+                                    onfocus="selectAllText()" onchange="updateSlider()" id="height_value" value="0" placeholder="0">
+                                <p class="d-inline">cms</p>
+                            </div>
+                            <div class="row">
+                                <input type="range" min="0" max="220" value="0" class="slider" id="height_range">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- WEIGHT AND AGE -->
+                <div class="col-6 d-flex justify-content-center">
+                    <div class="shadow card border-none mb-3" style="width: 10rem;">
+                        <div class="card-body ">
+                            <h5 class="card-title">Weight <span class="fs-6">(kgs)</span></h5>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="number" class="d-inline form-control text-center border-0 fs-1 fw-bold no-spin mb-2" onfocus="selectAllTextWeight()"  max="110" id="weight_value" value="0" placeholder="0">
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-success" onclick="addWeight()" >+</button>
+                                    <button class="btn btn-danger" onclick="subtractWeight()">-</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6  d-flex justify-content-center">
+                    <div class="shadow card border-none mb-3" style="width: 10rem;">
+                        <div class="card-body ">
+                            <h5 class="card-title">Age</h5>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="number" class="d-inline form-control text-center border-0 fs-1 fw-bold no-spin  mb-2" onfocus="selectAllTextAge()"  max="110" id="age_value" value="0" placeholder="0">
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-success" id="inc_age" onclick="addAge()" >+</button>
+                                    <button class="btn btn-danger" id="dec_weight" onclick="subtractAge()">-</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid mx-2">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resultModal">CALCULATE YOUR BMI</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="resultModalLabel">Your BMI Result</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+            <h1 id="bmi_val" class="fw-bold"></h1>
+          <h3 id="bmi_result"></h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="static/javascript/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
