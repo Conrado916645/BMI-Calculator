@@ -16,9 +16,18 @@
 
 <body>
 
-
+    <header>
+        <nav class="navbar bg-body-tertiary ">
+            <div class="container-fluid">
+              <p class="navbar-brand fw-bold">
+                <img src="static/icon/icon.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                BMI
+              </p>
+            </div>
+          </nav>
+    </header>
     <main>
-        <div class="container mt-5 text-center">
+        <div class="container mt-4 text-center">
             <!-- GENDER -->
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
@@ -72,8 +81,8 @@
                                         placeholder="0">
                                 </div>
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-success" onclick="addWeight()">+</button>
-                                    <button class="btn btn-danger" onclick="subtractWeight()">-</button>
+                                    <button class="shadow btn btn-light border border-black fw-bold  fs-4 text-primary" onclick="addWeight()">+</button>
+                                    <button class="shadow btn btn-light border border-black fw-bold fs-4 text-danger" onclick="subtractWeight()">-</button>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +99,8 @@
                                         onfocus="selectAllTextAge()" max="110" id="age_value" value="0" placeholder="0">
                                 </div>
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-success" id="inc_age" onclick="addAge()">+</button>
-                                    <button class="btn btn-danger" id="dec_weight" onclick="subtractAge()">-</button>
+                                    <button class="shadow btn btn-light border border-black fw-bold fs-4 text-primary" id="inc_age" onclick="addAge()">+</button>
+                                    <button class="shadow btn btn-light border border-black fw-bold fs-4 text-danger" id="dec_weight" onclick="subtractAge()">-</button>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +108,7 @@
                 </div>
             </div>
             <div class="d-grid">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resultModal">CALCULATE YOUR
+                <button class="shadow btn btn-light border border-black fw-bold" data-bs-toggle="modal" data-bs-target="#resultModal">CALCULATE YOUR
                     BMI</button>
             </div>
         </div>
